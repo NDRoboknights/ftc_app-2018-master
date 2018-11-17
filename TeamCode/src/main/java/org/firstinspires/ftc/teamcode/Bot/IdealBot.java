@@ -26,7 +26,6 @@ public class IdealBot extends Bot
     //sensors
     public ADAFruitIMU imu;
     public ColorSensor colorSensor;
-    public OpticalDistanceSensor oDS;
 
     //constructor
     public IdealBot(HardwareMap hMap)

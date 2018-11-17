@@ -46,13 +46,6 @@ public class TeleOp2 extends customTeleOp
         double rSpeed = Math.abs(dRPos/dTime);
 
 
-        //dist deltas
-        double dist = ((bot.oDS.getLightDetected()+bot.oDS.getRawLightDetected())/2);
-        double dDist = dist - prevDist;
-
-        //gets bot speed (delta light/time)
-        double botSpeed = dDist/dTime;
-
         /** Motor controls.
          * checks if |stick_y| is > stick thresh
          * if ^^ is true, sets motor power to stick y value**/
@@ -130,7 +123,6 @@ public class TeleOp2 extends customTeleOp
         telemetry.update();
 
         //reset prevs
-        prevDist = dist;
         prevTime = currTime;
         lPrevPos = lPos;
         rPrevPos = rPos;

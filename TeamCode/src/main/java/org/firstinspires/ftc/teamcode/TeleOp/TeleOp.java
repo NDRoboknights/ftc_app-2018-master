@@ -44,14 +44,6 @@ public class TeleOp extends customTeleOp
         double lSpeed = Math.abs(dLPos / dTime);
         double rSpeed = Math.abs(dRPos / dTime);
 
-
-        //dist deltas
-        double dist = ((bot.oDS.getLightDetected() + bot.oDS.getRawLightDetected()) / 2);
-        double dDist = dist - prevDist;
-
-        //gets bot speed (delta light/time)
-        double botSpeed = dDist / dTime;
-
         /** Motor controls.
          * checks if |stick_y| is > stick thresh
          * if ^^ is true, sets motor power to stick y value**/
@@ -75,8 +67,18 @@ public class TeleOp extends customTeleOp
             bot.intakeMotor.setPower(0);
         }
 
-        if (gamepad1.left_bumper) {
-            //main bot func 2
+        if (gamepad1.a)
+        {
+            bot.actuator.setPower(0.5);
+        }else{
+            bot.actuator.setPower(0);
+        }
+
+        if (gamepad1.y)
+        {
+            bot.actuator.setPower(-0.5);
+        }else{
+            bot.actuator.setPower(0);
         }
 
         //lifts intake
@@ -119,7 +121,6 @@ public class TeleOp extends customTeleOp
         telemetry.update();
 
         //reset prevs
-        prevDist = dist;
         prevTime = currTime;
         lPrevPos = lPos;
         rPrevPos = rPos;
