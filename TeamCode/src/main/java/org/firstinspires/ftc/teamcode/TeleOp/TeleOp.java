@@ -48,15 +48,15 @@ public class TeleOp extends customTeleOp
          * checks if |stick_y| is > stick thresh
          * if ^^ is true, sets motor power to stick y value**/
         //right motors
-        if (gamepad1.right_stick_y > customTeleOp.JOYSTICK_THRESHOLD) {
-            bot.rMotor.setPower(gamepad1.right_stick_y);
+        if (Math.abs(gamepad1.right_stick_y) > customTeleOp.JOYSTICK_THRESHOLD) {
+            bot.rMotor.setPower(-gamepad1.right_stick_y);
         } else {
             bot.rMotor.setPower(0);
         }
 
         //left motors
-        if (gamepad1.left_stick_y > customTeleOp.JOYSTICK_THRESHOLD) {
-            bot.lMotor.setPower(gamepad1.left_stick_y);
+        if (Math.abs(gamepad1.left_stick_y) > customTeleOp.JOYSTICK_THRESHOLD) {
+            bot.lMotor.setPower(-gamepad1.left_stick_y);
         } else {
             bot.lMotor.setPower(0);
         }
@@ -67,31 +67,40 @@ public class TeleOp extends customTeleOp
             bot.intakeMotor.setPower(0);
         }
 
-        if (gamepad1.a)
+        if (gamepad1.a && gamepad1.right_trigger>JOYSTICK_THRESHOLD)
         {
-            bot.actuator.setPower(0.5);
+            bot.actuator.setPower(-gamepad1.right_trigger);
         }else{
             bot.actuator.setPower(0);
         }
 
-        if (gamepad1.y)
+        if (gamepad1.y && gamepad1.right_trigger>JOYSTICK_THRESHOLD)
         {
-            bot.actuator.setPower(-0.5);
+            bot.actuator.setPower(gamepad1.right_trigger);
         }else{
             bot.actuator.setPower(0);
         }
 
         //lifts intake
-        if (gamepad1.dpad_up && gamepad1.right_trigger>JOYSTICK_THRESHOLD) {
-            bot.liftMotor.setPower(gamepad1.right_trigger);
+        if (gamepad1.dpad_up && gamepad1.left_trigger>JOYSTICK_THRESHOLD) {
+            bot.liftMotor.setPower(gamepad1.left_trigger);
         } else {
             bot.liftMotor.setPower(0);
         }
         //lowers intake
-        if (gamepad1.dpad_down && gamepad1.right_trigger>JOYSTICK_THRESHOLD) {
-            bot.liftMotor.setPower(-gamepad1.right_trigger);
+        if (gamepad1.dpad_down && gamepad1.left_trigger>JOYSTICK_THRESHOLD) {
+            bot.liftMotor.setPower(-gamepad1.left_trigger);
         } else {
             bot.liftMotor.setPower(0);
+        }
+
+        if(gamepad1.b)
+        {
+            bot.dump.setPosition(0.5);
+        }
+
+        if(gamepad1.x){
+            bot.dump.setPosition(-0.8);
         }
 
         /*

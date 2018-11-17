@@ -4,13 +4,13 @@ import com.qualcomm.robotcore.hardware.ColorSensor;
 import com.qualcomm.robotcore.hardware.DcMotor;
 import com.qualcomm.robotcore.hardware.HardwareMap;
 import com.qualcomm.robotcore.hardware.OpticalDistanceSensor;
+import com.qualcomm.robotcore.hardware.Servo;
+
 import org.firstinspires.ftc.teamcode.PID.ADAFruitIMU;
 
 
 public class IdealBot extends Bot
 {
-    //instantiates bot to be used for arrays
-    private Bot bot;
 
     //hmap
     private HardwareMap hardwareMap;
@@ -22,6 +22,8 @@ public class IdealBot extends Bot
     public DcMotor liftMotor;
     public DcMotor intakeMotor;
     public DcMotor actuator;
+
+    public Servo dump;
 
     //sensors
     public ADAFruitIMU imu;
@@ -47,16 +49,11 @@ public class IdealBot extends Bot
         rMotor.setMode(DcMotor.RunMode.RUN_USING_ENCODER);
         lMotor = hardwareMap.dcMotor.get("lMotor");
         lMotor.setMode(DcMotor.RunMode.RUN_USING_ENCODER);
+        dump = hardwareMap.servo.get("dump");
 
         //sensors
 
 //        imu = new ADAFruitIMU(hardwareMap, "imu");
 //        colorSensor = hardwareMap.colorSensor.get("colorSensor");
-//        oDS = hardwareMap.opticalDistanceSensor.get("oDS");
-
-
-        //adds to list
-        bot.leftMotors.add(lMotor);
-        bot.rightMotors.add(rMotor);
     }
 }
