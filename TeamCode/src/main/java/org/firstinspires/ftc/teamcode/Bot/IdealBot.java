@@ -24,6 +24,7 @@ public class IdealBot extends Bot
     public DcMotor actuator;
 
     public Servo dump;
+    public Servo drop;
 
     //sensors
     public ADAFruitIMU imu;
@@ -50,6 +51,7 @@ public class IdealBot extends Bot
         lMotor = hardwareMap.dcMotor.get("lMotor");
         lMotor.setMode(DcMotor.RunMode.RUN_USING_ENCODER);
         dump = hardwareMap.servo.get("dump");
+        drop = hardwareMap.servo.get("drop");
 
         //sensors
 
