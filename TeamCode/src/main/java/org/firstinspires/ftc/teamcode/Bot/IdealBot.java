@@ -22,6 +22,7 @@ public class IdealBot extends Bot
     public DcMotor liftMotor;
     public DcMotor intakeMotor;
     public DcMotor actuator;
+    public DcMotor spool;
 
     public Servo dump;
     public Servo drop;

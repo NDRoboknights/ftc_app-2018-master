@@ -12,12 +12,14 @@ public class Drop
     {
         bot.drop.setPosition(0);
         dropped = true;
+        bot.spool.setPower(1);
     }
     public void dropReset()
     {
         if (dropped)
         {
             bot.drop.setPosition(1);
+            bot.spool.setPower(-1);
             dropped = false;
         }
     }
