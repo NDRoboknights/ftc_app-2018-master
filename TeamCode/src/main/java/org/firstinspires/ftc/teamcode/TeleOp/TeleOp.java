@@ -60,60 +60,6 @@ public class TeleOp extends customTeleOp
         } else {
             bot.lMotor.setPower(0);
         }
-//
-//        if (gamepad1.right_bumper) {
-//            bot.intakeMotor.setPower(1);
-//        } else {
-//            bot.intakeMotor.setPower(0);
-//        }
-//
-//        if (gamepad1.a && gamepad1.right_trigger>JOYSTICK_THRESHOLD)
-//        {
-//            bot.actuator.setPower(-gamepad1.right_trigger);
-//        }else{
-//            bot.actuator.setPower(0);
-//        }
-//
-//        if (gamepad1.y && gamepad1.right_trigger>JOYSTICK_THRESHOLD)
-//        {
-//            bot.actuator.setPower(gamepad1.right_trigger);
-//        }else{
-//            bot.actuator.setPower(0);
-//        }
-//
-//        //lifts intake
-//        if (gamepad1.dpad_up && gamepad1.left_trigger>JOYSTICK_THRESHOLD) {
-//            bot.liftMotor.setPower(gamepad1.left_trigger);
-//        } else {
-//            bot.liftMotor.setPower(0);
-//        }
-//        //lowers intake
-//        if (gamepad1.dpad_down && gamepad1.left_trigger>JOYSTICK_THRESHOLD) {
-//            bot.liftMotor.setPower(-gamepad1.left_trigger);
-//        } else {
-//            bot.liftMotor.setPower(0);
-//        }
-//
-//        if(gamepad1.b)
-//        {
-//            bot.dump.setPosition(0.5);
-//        }
-//
-//        if(gamepad1.x){
-//            bot.dump.setPosition(-0.8);
-//        }
-
-        /*
-        reserve axby for secondary functions
-         */
-
-        /*
-        sets telemetry
-        */
-
-        //enc position
-//        telemetry.addData("L Position: ", lPos);
-//        telemetry.addData("R Position: ", rPos);
 
         //motor speed (ticks/sec)
         telemetry.addData("L Speed: ", lSpeed);
