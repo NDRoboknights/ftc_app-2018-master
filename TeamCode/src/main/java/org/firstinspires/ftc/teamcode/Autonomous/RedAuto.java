@@ -5,12 +5,13 @@ import com.qualcomm.robotcore.eventloop.opmode.LinearOpMode;
 
 import org.firstinspires.ftc.teamcode.utils.Drop;
 
-@Autonomous(name = "RedAuto", group = "testgroup")
+@Autonomous(name = "RedAuto")
 public class RedAuto extends LinearOpMode
 {
     Drop drop;
     public void runOpMode()
     {
+        drop = new Drop(hardwareMap);
         /*
         put init() here
          */

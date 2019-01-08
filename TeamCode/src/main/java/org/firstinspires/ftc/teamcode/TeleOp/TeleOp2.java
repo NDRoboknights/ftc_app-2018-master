@@ -2,7 +2,6 @@ package org.firstinspires.ftc.teamcode.TeleOp;
 
 import org.firstinspires.ftc.teamcode.Bot.IdealBot;
 
-@com.qualcomm.robotcore.eventloop.opmode.TeleOp(name = "TeleOp2")
 public class TeleOp2 extends customTeleOp
 {
     //bot
@@ -12,7 +11,6 @@ public class TeleOp2 extends customTeleOp
     private long prevTime = 0;
     private int lPrevPos = 0;
     private int rPrevPos = 0;
-    private double prevDist=0;
 
     //init
     public void init()

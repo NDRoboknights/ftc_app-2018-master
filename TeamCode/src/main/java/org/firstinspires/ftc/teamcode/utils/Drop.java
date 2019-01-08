@@ -1,26 +1,28 @@
 package org.firstinspires.ftc.teamcode.utils;
 
+import com.qualcomm.robotcore.hardware.HardwareMap;
+
 import org.firstinspires.ftc.teamcode.Bot.IdealBot;
+
+import static org.firstinspires.ftc.teamcode.utils.Utilities.delay;
 
 public class Drop
 {
     IdealBot bot;
 
+    public Drop(HardwareMap hMap)
+    {
+        bot = new IdealBot(hMap);
+        bot.init(hMap);
+    }
+
     public boolean dropped = false;
 
     public void botDrop()
     {
-        bot.drop.setPosition(0);
         dropped = true;
         bot.spool.setPower(1);
-    }
-    public void dropReset()
-    {
-        if (dropped)
-        {
-            bot.drop.setPosition(1);
-            bot.spool.setPower(-1);
-            dropped = false;
-        }
+        delay(10000);
+        bot.spool.setPower(0);
     }
 }
