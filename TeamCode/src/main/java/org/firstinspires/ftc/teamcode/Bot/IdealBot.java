@@ -3,6 +3,8 @@ package org.firstinspires.ftc.teamcode.Bot;
 import com.qualcomm.robotcore.hardware.ColorSensor;
 import com.qualcomm.robotcore.hardware.DcMotor;
 import com.qualcomm.robotcore.hardware.HardwareMap;
+import com.qualcomm.robotcore.hardware.Servo;
+
 import org.firstinspires.ftc.teamcode.PID.ADAFruitIMU;
 
 
@@ -17,11 +19,18 @@ public class IdealBot extends Bot
     public DcMotor lMotor;
     public DcMotor rMotor;
     public DcMotor spool;
+    public DcMotor lift;
+    public DcMotor crank;
 
     //sensors
     public ADAFruitIMU imu;
-    public ColorSensor colorSensor;
+    public ColorSensor cSensor1;
+    public ColorSensor cSensor2;
 
+    //Servos
+    public Servo cServo1;
+    public Servo cServo2;
+    public Servo drop;
     //constructor
     public IdealBot(HardwareMap hMap)
     {
@@ -39,5 +48,18 @@ public class IdealBot extends Bot
         lMotor = hardwareMap.dcMotor.get("lMotor");
         lMotor.setMode(DcMotor.RunMode.RUN_USING_ENCODER);
         spool = hardwareMap.dcMotor.get("spool");
+        spool.setMode(DcMotor.RunMode.RUN_USING_ENCODER);
+        lift = hardwareMap.dcMotor.get("lift");
+        lift.setMode(DcMotor.RunMode.RUN_USING_ENCODER);
+        crank = hardwareMap.dcMotor.get("crank");
+
+//        //Servos
+//        cServo1 = hardwareMap.servo.get("cServo1");
+//        cServo2 = hardwareMap.servo.get("cServo2");
+        drop = hardwareMap.servo.get("drop");
+//
+//        //sensors
+//        cSensor1 = hardwareMap.colorSensor.get("cSensor1");
+//        cSensor2 = hardwareMap.colorSensor.get("cSensor2");
     }
 }

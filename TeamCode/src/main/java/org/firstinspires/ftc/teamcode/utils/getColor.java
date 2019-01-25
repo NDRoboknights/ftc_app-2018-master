@@ -13,18 +13,20 @@ public class getColor
     private Color AccColor;
 
     //gets color values
-    private  int getBlue(){return bot.colorSensor.blue();}
-    private  int getRed(){return bot.colorSensor.red();}
+    private int getBlue(){return bot.cSensor1.blue();}
+    private int getRed(){return bot.cSensor1.red();}
+    private int getRed2(){return bot.cSensor2.red();}
+    private int getBlue2(){return bot.cSensor2.blue();}
 
     public Color interpretColor()
     {
         //determines color
-        if(getBlue() > CustomAutonomous.COLOR_THRESHOLD && getRed()<CustomAutonomous.COLOR_THRESHOLD)
+        if(getRed() > CustomAutonomous.COLOR_THRESHOLD && getRed2() > CustomAutonomous.COLOR_THRESHOLD)
+        {
+            AccColor = Color.GOLD;
+        }else if()
         {
             AccColor = Color.BLUE;
-        }else if(getRed() > CustomAutonomous.COLOR_THRESHOLD && getBlue()<CustomAutonomous.COLOR_THRESHOLD)
-        {
-            AccColor = Color.RED;
         }else
         {
             AccColor = Color.UNKNOWN;
