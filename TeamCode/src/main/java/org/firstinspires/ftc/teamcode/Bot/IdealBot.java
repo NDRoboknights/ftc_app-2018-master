@@ -24,8 +24,8 @@ public class IdealBot extends Bot
 
     //sensors
     public ADAFruitIMU imu;
-    public ColorSensor cSensor1;
-    public ColorSensor cSensor2;
+    public ColorSensor rSensor;
+    public ColorSensor lSensor;
 
     //Servos
     public Servo cServo1;
@@ -59,7 +59,7 @@ public class IdealBot extends Bot
         drop = hardwareMap.servo.get("drop");
 //
 //        //sensors
-//        cSensor1 = hardwareMap.colorSensor.get("cSensor1");
-//        cSensor2 = hardwareMap.colorSensor.get("cSensor2");
+        rSensor = hardwareMap.colorSensor.get("rSensor");
+        lSensor = hardwareMap.colorSensor.get("lSensor");
     }
 }

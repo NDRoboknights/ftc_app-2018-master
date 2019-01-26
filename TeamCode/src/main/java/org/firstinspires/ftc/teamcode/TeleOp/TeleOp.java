@@ -75,14 +75,25 @@ public class TeleOp extends customTeleOp
             bot.lift.setPower(gamepad1.left_trigger);
         }else if(gamepad1.right_trigger > customTeleOp.JOYSTICK_THRESHOLD)
         {
-            bot.spool.setPower(-gamepad1.right_trigger);
-            bot.lift.setPower(gamepad1.right_trigger);
+            bot.spool.setPower(gamepad1.right_trigger);
+            bot.lift.setPower(-gamepad1.right_trigger);
         }else {
             bot.spool.setPower(0);
             bot.lift.setPower(0);
         }
 
+        if(gamepad1.dpad_up)
+        {
+            bot.crank.setPower(1);
+        }
+        else{
+            bot.crank.setPower(0);
+        }
 
+        if(gamepad1.dpad_down)
+        {
+            bot.crank.setPower(-1);
+        }
         //motor speed (ticks/sec)
 
         telemetry.addData("L Speed: ", lSpeed);
