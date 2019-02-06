@@ -33,7 +33,7 @@ public class getColor
     {
         if(getRightBlue()> CustomAutonomous.COLOR_THRESHOLD &&  getRightGreen() > CustomAutonomous.COLOR_THRESHOLD && getRightRed() > CustomAutonomous.COLOR_THRESHOLD){
             rightColor = Color.WHITE;
-            return Color.WHITE;
+            return rightColor;
         }else
             {
                 rightColor = Color.UNKNOWN;

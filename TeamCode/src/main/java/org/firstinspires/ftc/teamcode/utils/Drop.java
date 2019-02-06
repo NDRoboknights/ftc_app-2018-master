@@ -22,9 +22,15 @@ public class Drop
 
     public void botDrop()
     {
-        bot.drop.setPosition(1);
         bot.spool.setPower(-1);
+        bot.lift.setPower(1);
+        delay(2600);
+        bot.spool.setPower(0);
+        bot.lift.setPower(0);
+        bot.lMotor.setPower(-1);
+        bot.rMotor.setPower(-1);
         delay(5000);
-        bot.drop.setPosition(0);
+        bot.rMotor.setPower(0);
+        bot.lMotor.setPower(0);
     }
 }

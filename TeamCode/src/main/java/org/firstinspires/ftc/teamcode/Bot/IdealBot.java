@@ -20,7 +20,6 @@ public class IdealBot extends Bot
     public DcMotor rMotor;
     public DcMotor spool;
     public DcMotor lift;
-    public DcMotor crank;
 
     //sensors
     public ADAFruitIMU imu;
@@ -50,15 +49,12 @@ public class IdealBot extends Bot
         spool = hardwareMap.dcMotor.get("spool");
         spool.setMode(DcMotor.RunMode.RUN_USING_ENCODER);
         lift = hardwareMap.dcMotor.get("lift");
-        lift.setMode(DcMotor.RunMode.RUN_USING_ENCODER);
-        crank = hardwareMap.dcMotor.get("crank");
 
-//        //Servos
-//        cServo1 = hardwareMap.servo.get("cServo1");
-//        cServo2 = hardwareMap.servo.get("cServo2");
-        drop = hardwareMap.servo.get("drop");
-//
-//        //sensors
+        //Servos
+        cServo1 = hardwareMap.servo.get("cServo1");
+        cServo2 = hardwareMap.servo.get("cServo2");
+
+        //sensors
         rSensor = hardwareMap.colorSensor.get("rSensor");
         lSensor = hardwareMap.colorSensor.get("lSensor");
     }
