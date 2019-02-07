@@ -2,8 +2,6 @@ package org.firstinspires.ftc.teamcode.utils;
 
 import com.qualcomm.robotcore.hardware.HardwareMap;
 
-import org.firstinspires.ftc.teamcode.Autonomous.CustomAutonomous;
-import org.firstinspires.ftc.teamcode.Bot.Bot;
 import org.firstinspires.ftc.teamcode.Bot.IdealBot;
 import org.firstinspires.ftc.teamcode.Enums.Color;
 
@@ -31,18 +29,33 @@ public class getColor
 
     public Color rightColor()
     {
-        if(getRightBlue()> CustomAutonomous.COLOR_THRESHOLD &&  getRightGreen() > CustomAutonomous.COLOR_THRESHOLD && getRightRed() > CustomAutonomous.COLOR_THRESHOLD){
-            rightColor = Color.WHITE;
+        if(getRightBlue() > 20 && getRightRed() > 50 && getRightGreen() > 50 && getRightRed()-getRightBlue()>15)
+        {
+            rightColor = Color.GOLD;
             return rightColor;
-        }else
-            {
-                rightColor = Color.UNKNOWN;
+        }else if (getLeftRed() > 80 && getLeftBlue() > 80 && getRightGreen() > 80)
+        {
+            leftColor = Color.WHITE;
+            return rightColor;
+        }else{
+            rightColor = Color.UNKNOWN;
             return rightColor;
         }
     }
-    
-    public Color leftColor()
-    {
-        return leftColor;
+
+    public Color leftColor() {
+        if (getLeftRed() > 80 && getLeftBlue() > 80 && getRightGreen() > 80)
+        {
+            leftColor = Color.WHITE;
+            return leftColor;
+        }else if(getRightBlue() > 20 && getRightRed() > 50 && getRightGreen() > 50 && getRightRed()-getRightBlue()>15)
+        {
+            leftColor = Color.GOLD;
+            return rightColor;
+        }else
+        {
+            leftColor = Color.UNKNOWN;
+            return leftColor;
+        }
     }
 }

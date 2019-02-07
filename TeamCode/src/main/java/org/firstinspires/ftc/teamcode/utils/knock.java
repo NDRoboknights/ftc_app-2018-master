@@ -15,6 +15,7 @@ public class knock
     {
         this.hardwareMap = hardwareMap;
         bot = new IdealBot(this.hardwareMap);
+        bot.init(this.hardwareMap);
         color = new getColor(bot, hardwareMap);
     }
     public void knockMineral(Direction dir){
