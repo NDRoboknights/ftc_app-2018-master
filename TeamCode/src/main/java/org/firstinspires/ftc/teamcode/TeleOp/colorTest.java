@@ -17,11 +17,13 @@ public class colorTest extends OpMode
     {
         bot = new IdealBot(hardwareMap);
         bot.init(hardwareMap);
-        gc = new getColor(bot, hardwareMap);
+        gc = new getColor(hardwareMap);
         knock = new knock(hardwareMap);
     }
     public void loop()
     {
+        bot.cServo2.setPosition(0.4);
+        bot.cServo1.setPosition(0.8);
         telemetry.addData("right red: ", gc.getRightRed());
         telemetry.addData("right blue: ", gc.getRightBlue());
         telemetry.addData("right green: ", gc.getRightGreen());
@@ -30,6 +32,7 @@ public class colorTest extends OpMode
         telemetry.addData("left blue: ", gc.getLeftBlue());
         telemetry.addData("left green: ", gc.getLeftGreen());
         telemetry.addData("left color: ", gc.leftColor());
+        telemetry.addData("where color: ", knock.interpretDir(gc.leftColor(), gc.rightColor()));
 
         telemetry.update();
     }

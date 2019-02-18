@@ -10,8 +10,9 @@ public class getColor
     //bot instantiator
     public IdealBot bot;
 
-    public getColor(IdealBot bot, HardwareMap hardwareMap){
-        this.bot = bot;
+    public getColor(HardwareMap hardwareMap)
+    {
+        bot = new IdealBot(hardwareMap);
         bot.init(hardwareMap);
     }
 
@@ -33,7 +34,8 @@ public class getColor
         {
             rightColor = Color.GOLD;
             return rightColor;
-        }else if (getLeftRed() > 80 && getLeftBlue() > 80 && getRightGreen() > 80)
+        }
+        if (getLeftRed() > 80 && getLeftBlue() > 80 && getRightGreen() > 80)
         {
             leftColor = Color.WHITE;
             return rightColor;
@@ -43,15 +45,16 @@ public class getColor
         }
     }
 
-    public Color leftColor() {
-        if (getLeftRed() > 80 && getLeftBlue() > 80 && getRightGreen() > 80)
-        {
+    public Color leftColor()
+    {
+        if (getLeftRed() > 80 && getLeftBlue() > 80 && getRightGreen() > 80) {
             leftColor = Color.WHITE;
             return leftColor;
-        }else if(getRightBlue() > 20 && getRightRed() > 50 && getRightGreen() > 50 && getRightRed()-getRightBlue()>15)
+        }
+        if(getLeftBlue() > 20 && getLeftRed() > 50 && getLeftGreen() > 50 && getLeftRed()-getLeftBlue()>15)
         {
             leftColor = Color.GOLD;
-            return rightColor;
+            return leftColor;
         }else
         {
             leftColor = Color.UNKNOWN;

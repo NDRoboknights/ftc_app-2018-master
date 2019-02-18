@@ -11,26 +11,26 @@ public class Drop
 {
     //bot instantiator
     private IdealBot bot;
-    private getColor gc;
     public Drop(HardwareMap hMap)
     {
         bot = new IdealBot(hMap);
         bot.init(hMap);
-        gc = new getColor(bot, hMap);
     }
 
 
     public void botDrop()
     {
-        bot.spool.setPower(-1);
-        bot.lift.setPower(1);
-        delay(2600);
+        bot.spool.setPower(1);
+        bot.lift.setPower(-1);
+        delay(2200);
         bot.spool.setPower(0);
         bot.lift.setPower(0);
         bot.lMotor.setPower(-1);
         bot.rMotor.setPower(-1);
-        delay(5000);
+        delay(4500);
         bot.rMotor.setPower(0);
         bot.lMotor.setPower(0);
+        bot.cServo2.setPosition(0.4);
+        bot.cServo1.setPosition(0.8);
     }
 }

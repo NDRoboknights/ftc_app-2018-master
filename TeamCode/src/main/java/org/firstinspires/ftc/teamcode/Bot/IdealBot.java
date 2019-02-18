@@ -25,7 +25,6 @@ public class IdealBot extends Bot
     public ADAFruitIMU imu;
     public ColorSensor rSensor;
     public ColorSensor lSensor;
-
     //Servos
     public Servo cServo1;
     public Servo cServo2;

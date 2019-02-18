@@ -19,6 +19,8 @@ public class TeleOp extends customTeleOp
     {
         //maps hardware
         bot.init(hardwareMap);
+        bot.cServo1.setPosition(0);
+        bot.cServo2.setPosition(0.4);
     }
 
     //runs when active
